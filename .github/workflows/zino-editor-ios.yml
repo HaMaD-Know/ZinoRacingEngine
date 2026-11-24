@@ -22,13 +22,19 @@ env:
   GODOT: "4.7.2"
 jobs:
   ios:
-    runs-on: macos-15
+    runs-on: macos-26
     timeout-minutes: 60
     defaults:
       run:
         working-directory: ZinoEditor
     steps:
       - uses: actions/checkout@v4
+      - name: Use the newest Xcode (Godot 4.7 needs the iOS 26 SDK)
+        run: |
+          X="$(ls -d /Applications/Xcode_2[6-9]*.app 2>/dev/null | grep -v -i beta | sort -V | tail -1)"
+          if [ -z "$X" ]; then X="$(ls -d /Applications/Xcode*.app | sort -V | tail -1)"; fi
+          sudo xcode-select -s "$X"
+          xcodebuild -version
       - name: Install Godot and export templates
         run: |
           curl -fsSL -o godot.zip "https://github.com/godotengine/godot/releases/download/${GODOT}-stable/Godot_v${GODOT}-stable_macos.universal.zip"
