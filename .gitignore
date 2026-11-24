@@ -1,0 +1,17 @@
+# Godot
+.godot/
+*.tmp
+# OS / editors
+Thumbs.db
+.DS_Store
+.vscode/
+# Local build output
+/builds/
+
+# Test scratch space and release output
+/.test_tmp/
+/builds/
+
+# Generated when building the iPhone/iPad app
+/ZinoEditor/engine_addons.zip
+/ZinoEditor/Builds/
