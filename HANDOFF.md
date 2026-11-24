@@ -60,6 +60,16 @@ F:\Godot\Godot_v4.7.2-stable_win64_console.exe --path ZinoEditor -- --zino-selft
 
 ## Status: all phases done + Easy mode (v1.1.0). Optional follow-ups are in ROADMAP.md › Next.
 
+### iPhone/iPad build of the editor (v1.1.0)
+- Repo: https://github.com/HaMaD-Know/ZinoRacingEngine (public, so GitHub's macOS runners are free).
+- Actions › "Zino editor iOS build" › Run workflow → artifact `ZinoRacingEngine-ipa` (unsigned without
+  secrets; signed with APPLE_TEAM_ID, IOS_CERTIFICATE_P12_BASE64, IOS_CERTIFICATE_PASSWORD,
+  IOS_PROVISIONING_PROFILE_BASE64). Needs runner `macos-26` (Godot 4.7.2 links iOS 26 SDK symbols).
+- iOS specifics: `ZinoProjectService.engine_addons_dir()` unpacks `res://engine_addons.zip` (made by
+  `tools/pack_engine_addons.gd` in CI) into user://; touch input in `viewport_panel.gd`; `OS.has_feature("mobile")`
+  guards in editor_session (bridge, Godot editor), build_center (export), zino_app (UI scale).
+- Not yet tried on a real device.
+
 ### Easy mode (v1.1.0, user asked "make it easier but still professional")
 - Home › **✨ Make a Game** → `app/home/make_game_wizard.gd` → `core/zino_quick_game.gd` (`create(choices)`).
 - Simple/Advanced: `editor_screen.gd` (`simple`, `SIMPLE_WORKSPACES`, `set_advanced()`), setting `simpleMode`

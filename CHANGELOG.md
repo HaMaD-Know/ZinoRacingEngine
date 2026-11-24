@@ -18,6 +18,13 @@
   recipe and open Publish; *Show me* jumps to the right place (`app/editor/coach.gd`).
 - Chase camera start view is set from the scene (`camera.startMode`).
 
+- **Zino on iPhone/iPad**: touch navigation in the 3D view (one finger orbit/tap select, pinch zoom,
+  two-finger pan), Retina UI scale, engine add-ons bundled in the app, projects visible in the Files app;
+  desktop-only parts (Godot bridge, local export) hidden on iOS. GitHub workflow
+  `.github/workflows/zino-editor-ios.yml` builds the editor `.ipa` (unsigned without Apple secrets).
+- Game iOS workflow rewritten: Team ID injected, unsigned build without secrets, proper manual signing
+  with the provisioning profile, Godot unpacked outside the game, macOS 26 runner + newest Xcode.
+
 ### Fixed
 - AI opponents now start on the grid slots instead of piling up next to the player.
 

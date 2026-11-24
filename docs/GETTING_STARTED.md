@@ -24,6 +24,14 @@ New users start in **Simple mode**. Press **Advanced** (top right, or *View › 
 professional tool: World, UI and Audio studios, gizmo space and snapping, the console and more.
 Both modes edit the same game — you can switch at any time.
 
+## Zino on iPhone / iPad
+Build the app on GitHub: **Actions › Zino editor iOS build › Run workflow**, then download the
+`ZinoRacingEngine-ipa` artifact. Without Apple secrets the `.ipa` is unsigned: install it with a
+sideloading tool (for example Sideloadly with your Apple ID; free Apple IDs must reinstall every 7 days).
+On iPad: drag one finger to orbit, tap to select, pinch to zoom, drag two fingers to pan. Your projects
+appear in the Files app under Zino. Publishing games needs Zino on Windows/Mac or the game's own
+GitHub workflow (Publish › Create GitHub Actions iOS workflow).
+
 ## Create a project the advanced way
 1. **New Project (advanced)…** on the Home screen (or pick a template card).
 2. Choose a name, a folder, a game type (Circuit, Drift, Drag, Kart, Open World…), the graphics
